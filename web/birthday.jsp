@@ -258,7 +258,8 @@
                  *
                  * */
                 lastHTTPPost = lastHTTPPost.substring(0,lastHTTPPost.lastIndexOf(","));
-                lastHTTPPost
+                lastHTTPPost = '[' + lastHTTPPost + ']';
+                // str = '[' + str + ']';
                 //然后给服务器发送数据
                 //因为我们使用ajax异步发送数据
                 //所以我们需要使用对象XMLHttp
