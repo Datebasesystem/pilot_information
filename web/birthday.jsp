@@ -254,6 +254,8 @@
                 /**
                  * 对传入服务器的json预处理，
                  *
+                 *
+                 *
                  * */
                 lastHTTPPost = lastHTTPPost.substring(0,lastHTTPPost.lastIndexOf(","));
                 lastHTTPPost
