@@ -533,9 +533,7 @@
                 // var str = '[{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}]' ;
                 //var str = '{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}' ;
                 var str = '{\"start\":\"' + start.value + '\",\"end\":\"' + end.value + '\"}' ;
-                // alert(str);
 
-                // 数据连接，为查询做准备
                 lastHTTPPost = lastHTTPPost + str + ',';
 
 
