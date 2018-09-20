@@ -192,7 +192,7 @@
 
       <script type="text/javascript">
             var xmlHttp;
-            var lastHTTPPost;
+            var lastHTTPPost = "";
           //获得飞行员出生年份的函数
           function getMoreContents() {
               //首先获得用户的输入
@@ -243,14 +243,20 @@
 
 
             function sendTextToServer() {
-                //首先获得用户的输入
 
+                //首先获得用户的输入
+                //用户输入存在lastHTTPPost中，以json格式
                 // alert(content);
-                if(lastHTTPPost.value == ""){
+
+                if(lastHTTPPost == ""){
                    alert("查询信息不能为空");
                 }
-
-
+                /**
+                 * 对传入服务器的json预处理，
+                 *
+                 * */
+                lastHTTPPost = lastHTTPPost.substring(0,lastHTTPPost.lastIndexOf(","));
+                lastHTTPPost
                 //然后给服务器发送数据
                 //因为我们使用ajax异步发送数据
                 //所以我们需要使用对象XMLHttp
@@ -315,7 +321,10 @@
                         var result = xmlHttp.responseText;
                         //获得解析数据
                         var json = eval("(" + result + ")");
-                        //JSP的json和java不太一样，需要在外部加（）
+                        /**
+                         * JSP的json和java不太一样，需要在外部加（）
+                         */
+
                         //获得数据后，动态显示
                         //输入框下面
                         setContent(json,"keyword1","content_table_body");
@@ -522,7 +531,8 @@
                 var start = document.getElementById("keyword1");
                 var end = document.getElementById("keyword2");
                 // var str = '[{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}]' ;
-                var str = '{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}' ;
+                //var str = '{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}' ;
+                var str = '{\"start\":\"' + start.value + '\",\"end\":\"' + end.value + '\"}' ;
                 // alert(str);
 
                 // 数据连接，为查询做准备
@@ -800,7 +810,7 @@
           <%--List list = null;--%>
           <%--if(session.getAttribute("PILOTSID")!=null){--%>
 
-              <%--list = (List)session.getAttribute("PILOTSID");--%>
+              <%--list  ·1= (List)session.getAttribute("PILOTSID");--%>
 
               <%--if(list.size()>0){--%>
                   <%--int temp = 0;--%>

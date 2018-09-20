@@ -621,7 +621,7 @@
           <li><a href="index.jsp">首页</a></li>
           <li><a href="birthday.jsp">按出生年份查询</a>
               <ul>
-                  <li><a href="#">以数据列表的方式显示</a></li>
+                  <li><a href="birthdayTable.jsp">以数据列表的方式显示</a></li>
                   <li><a href="#">以柱状图的方式显示</a></li>
                   <li><a href="#">以饼状图的方式显示</a></li>
                   <li><a href="#">以折线图的方式显示</a></li>
