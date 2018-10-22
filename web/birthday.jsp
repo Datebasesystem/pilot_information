@@ -10,9 +10,9 @@
 --%>
 
 <%@ page import="java.util.List" %>
-<%@ page import="bean.Pilots" %>
+<%@ page import="main.bean.Pilots" %>
 
-<%@ page import="servlet.ShowReport" %>
+<%@ page import="main.servlet.ShowReport" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -238,8 +238,8 @@
 
 
 
-
-
+            //   查询   按钮的编写
+            //点击查询后将JSON数据传回服务器
 
 
             function sendTextToServer() {
@@ -267,7 +267,9 @@
                 xmlHttp = createXMLHttp();
                 // alert(xmlHttp);
                 //要给服务器发送数据
-                var url = "search?keyword="+escape(content.value);
+                //var url = "search?keyword="+escape(content.value);
+                var url = "search?selection="+escape(lastHTTPPost.value);
+
                 //true表示JavaScript脚本会在send()方法后继续执行而不会等待服务器的响应
 
 
@@ -531,6 +533,7 @@
             // 动态展示输入信息
 
             function data(){
+                debugger
                 var start = document.getElementById("keyword1");
                 var end = document.getElementById("keyword2");
                 // var str = '[{\'start\':\'' + start.value + '\',\'end\':\'' + end.value + '\'}]' ;

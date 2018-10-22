@@ -10,9 +10,9 @@
 --%>
 
 <%@ page import="java.util.List" %>
-<%@ page import="bean.Pilots" %>
+<%@ page import="main.bean.Pilots" %>
 
-<%@ page import="servlet.ShowReport" %>
+<%@ page import="main.servlet.ShowReport" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

@@ -6,10 +6,10 @@
  */
 
 
-package javadao;
+package main.javadao;
 
-import bean.Pilots;
-import jdbc.JavaJdbc;
+import main.bean.Pilots;
+import main.jdbc.JavaJdbc;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -115,7 +115,15 @@ public class JavaDao {
     }
 
 
+    public static List searchYearOfSection(int start, int end) {
 
-
-
+        list.add("1");
+        list.add("2");
+        list.add("444");
+        list.add("345");
+        list.add("2fsdfsd");
+        list.add("234wrwe");
+        list.add("212dfgghtrh");
+        return list;
+    }
 }

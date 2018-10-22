@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="bean.Pilots" %>
-<%@ page import="servlet.ShowReport" %><%--
+<%@ page import="main.bean.Pilots" %>
+<%@ page import="main.servlet.ShowReport" %><%--
   Created by IntelliJ IDEA.
   User: 周瑛
   Date: 2018/8/23

@@ -11,7 +11,7 @@
 <servlet>
     <servlet-name>ShowReport</servlet-name>
 
-    <servlet-class>servlet.ShowReport</servlet-class>
+    <servlet-class>main.servlet.ShowReport</servlet-class>
 
 
 
@@ -20,7 +20,7 @@
     <servlet>
     <servlet-name>search</servlet-name>
 
-    <servlet-class>servlet.ShowReport</servlet-class>
+    <servlet-class>main.servlet.ShowReport</servlet-class>
 
 
 

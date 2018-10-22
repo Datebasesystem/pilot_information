@@ -227,10 +227,10 @@ on the object of the underlying collection.
     </attribute>
     <attribute>
         <description>
-Name of the exported scoped variable for the
-status of the iteration. Object exported is of type
-javax.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable has nested
-visibility.
+            Name of the exported scoped variable for the
+            status of the iteration. Object exported is of type
+            javax.main.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable has nested
+            visibility.
         </description>
 	<name>varStatus</name>
 	<required>false</required>
@@ -306,12 +306,12 @@ variable has nested visibility.
     </attribute>
     <attribute>
         <description>
-Name of the exported scoped variable for the
-status of the iteration. Object exported is of
-type
-javax.servlet.jsp.jstl.core.LoopTag
-Status. This scoped variable has nested
-visibility.
+            Name of the exported scoped variable for the
+            status of the iteration. Object exported is of
+            type
+            javax.main.servlet.jsp.jstl.core.LoopTag
+            Status. This scoped variable has nested
+            visibility.
         </description>
 	<name>varStatus</name>
 	<required>false</required>

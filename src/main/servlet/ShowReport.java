@@ -8,14 +8,16 @@
  */
 
 
-package servlet;
+package main.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import main.bean.ShowList;
 import net.sf.json.JSONArray;
-import service.Service;
+import main.service.Service;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -39,6 +41,8 @@ public class ShowReport extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         List<String> list = new ArrayList();
         Integer keyword = Integer.valueOf(request.getParameter("keyword"));
+        //  之前传入的仅仅为一个数字，可以用int
+        String keywordSelection = String.valueOf(request.getParameter("selection"));
         //获得关键字之后进行处理，得到关联数据
         Service service = new Service();
         try {
@@ -47,12 +51,20 @@ public class ShowReport extends HttpServlet {
             e.printStackTrace();
         }
 
+        ShowList listSum = new ShowList();
+        Service service2 = new Service();
+        try {
+            listSum = service2.getSelectionAnswer(keywordSelection);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
 //        返回JSON格式
         System.out.println(list);
 
         System.out.println(JSONArray.fromObject(list));
         response.getWriter().write(JSONArray.fromObject(list).toString());
+        //response.getWriter().write(JSONArray.fromObject(list).toString());
     }
 
     public void doPost(HttpServletRequest request , HttpServletResponse response ) throws IOException {
@@ -64,7 +76,7 @@ public class ShowReport extends HttpServlet {
             e.printStackTrace();
         }
         request.getSession().setAttribute("PILOTSID",list);
-        response.sendRedirect("birthday.jsp");
+        response.sendRedirect("index.jsp");
     }
 
 }

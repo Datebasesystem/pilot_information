@@ -7,7 +7,7 @@
  */
 
 
-package jdbc;
+package main.jdbc;
 
 
 import java.sql.*;
@@ -15,9 +15,9 @@ import java.sql.*;
 
 public class JavaJdbc {
     //数据库地址
-    private static String url = "jdbc:mysql://127.0.0.1:3306/pilot?serverTimezone=UTC";
+    private static String url = "main.jdbc:mysql://127.0.0.1:3306/pilot?serverTimezone=UTC";
     //JDBC驱动
-    private static String driverName = "com.mysql.jdbc.Driver";
+    private static String driverName = "com.mysql.main.jdbc.Driver";
     //数据库名字
     private static String user = "root";
     //数据库密码

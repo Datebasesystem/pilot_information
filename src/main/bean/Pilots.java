@@ -7,7 +7,7 @@
  */
 
 
-package bean;
+package main.bean;
 
 public class Pilots {
     //飞行员id

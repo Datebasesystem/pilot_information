@@ -201,10 +201,10 @@ suffix.
     </attribute>
     <attribute>
         <description>
-Name of the exported scoped variable which stores
-the i18n localization context of type
-javax.servlet.jsp.jstl.fmt.LocalizationC
-ontext.
+            Name of the exported scoped variable which stores
+            the i18n localization context of type
+            javax.main.servlet.jsp.jstl.fmt.LocalizationC
+            ontext.
         </description>
         <name>var</name>
         <required>false</required>
