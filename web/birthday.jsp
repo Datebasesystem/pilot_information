@@ -279,6 +279,7 @@
                 //所以，当完成之后再调用回调方法才有意义
                 xmlHttp.onreadystatechange=callback;
                 xmlHttp.send(null);
+                jump
             }
 
 
@@ -667,29 +668,6 @@
 </div>
 
 
-<%--下拉框-----%>
-  <%--city<select id="city" onchange="cascadeMenu();">--%>
-      <%--<option value="1">北京</option>--%>
-      <%--<option value="2">上海</option>--%>
-      <%--<option value="3">天津</option>--%>
-  <%--</select>--%>
-  <%--section<select id="section">--%>
-
-  <%--</select>--%>
-
-  <%--<div class="text" style=" text-align:center ; margin-top: 50px;--%>
-  <%--color: white ; font-family: 华文行楷 ; font-size: 35px" >请输入查询的组数：--%>
-
-  <%--</div>--%>
-
-  <%--<br>--%>
-
-  <%--<div style=" text-align: center ">--%>
-  <%--<input type="text" style="width:150px;height:30px; " id = "turn">--%>
-      <%--&nbsp;--%>
-      <%--<input type="submit" id="turnButton" class="button" value="确定"/>--%>
-
-   <%--</div>--%>
 
 
 
@@ -758,10 +736,7 @@
           <table id="content_table2" bgcolor="FFFAFA" border="0"
                  cellspacing="0" cellpadding="0">
               <tbody id="content_table_body2">
-              <%--动态查询出来的数据显示在这位置--%>
-              <%--<tr><td bgcolor="white">ssss</td></tr>--%>
-              <%--<tr><td bgcolor="white">ssss</td></tr>--%>
-              <%--<tr><td bgcolor="white">ssss</td></tr>--%>
+
               </tbody>
 
           </table>
@@ -777,10 +752,6 @@
       <tr>
           <th>start</th>
           <th>end</th>
-          <%--<th>enasde</th>--%>
-          <%--<th>salary</th>--%>
-          <%--<th>age</th>--%>
-          <%--<th><input type='button' value='导入数据' onclick="data()"></th>--%>
       </tr>
       </thead>
       <tbody id='tbody'>

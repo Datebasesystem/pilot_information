@@ -42,11 +42,7 @@ public class ShowReport extends HttpServlet {
         List<String> list = new ArrayList();
         Integer keyword = Integer.valueOf(request.getParameter("keyword"));
         //  之前传入的仅仅为一个数字，可以用int
-        /**
-         *
-         * 对飞行员以出生年份进行查询
-         */
-        String keywordSelection = String.valueOf(request.getParameter("selection"));
+
         //获得关键字之后进行处理，得到关联数据
         Service service = new Service();
         try {
@@ -54,6 +50,46 @@ public class ShowReport extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
+
+
+//        返回JSON格式
+        //System.out.println(list);
+
+        System.out.println(JSONArray.fromObject(list));
+        response.getWriter().write(JSONArray.fromObject(list).toString());
+
+        //response.getWriter().write(JSONArray.fromObject(list).toString());
+
+        //如何将listSum的内容返回给前端？
+
+
+
+    }
+/**
+ * @name 方法的名称  doPostPilots
+ * @brief  方法的描述  传入飞行员的数据，用post方法将查询的结果返回
+ * @param 参数说明 b true 表示显示，false 表示隐藏
+ * @param 参数说明
+ * @return 返回值
+ * @throws 对方法可能抛出的异常进行说明
+ * @author 周瑛
+ */
+
+    public void doPostPilots(HttpServletRequest request , HttpServletResponse response ) throws IOException{
+
+
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+
+
+        /**
+         *
+         * 对飞行员以出生年份进行查询
+         */
+        String keywordSelection = String.valueOf(request.getParameter("selection"));
+        //获得关键字之后进行处理，得到关联数据
 
         ShowList listSum = new ShowList();
         Service service2 = new Service();
@@ -66,11 +102,18 @@ public class ShowReport extends HttpServlet {
 //        返回JSON格式
         //System.out.println(list);
 
-        System.out.println(JSONArray.fromObject(list));
-        response.getWriter().write(JSONArray.fromObject(list).toString());
-        //response.getWriter().write(JSONArray.fromObject(list).toString());
-    }
 
+
+        //response.getWriter().write(JSONArray.fromObject(list).toString());
+
+        //如何将listSum的内容返回给前端？
+        //post方法
+        request.getSession().setAttribute("BIRTHDAYTOSEARCH",listSum);
+
+        //重定向
+        response.sendRedirect("birthdayTable.jsp");
+
+    }
     public void doPost(HttpServletRequest request , HttpServletResponse response ) throws IOException {
         List list = new ArrayList();
         Service service = new Service();
@@ -80,6 +123,8 @@ public class ShowReport extends HttpServlet {
             e.printStackTrace();
         }
         request.getSession().setAttribute("PILOTSID",list);
+
+        //重定向
         response.sendRedirect("index.jsp");
     }
 
