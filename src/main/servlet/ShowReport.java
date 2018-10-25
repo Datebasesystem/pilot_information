@@ -42,6 +42,10 @@ public class ShowReport extends HttpServlet {
         List<String> list = new ArrayList();
         Integer keyword = Integer.valueOf(request.getParameter("keyword"));
         //  之前传入的仅仅为一个数字，可以用int
+        /**
+         *
+         * 对飞行员以出生年份进行查询
+         */
         String keywordSelection = String.valueOf(request.getParameter("selection"));
         //获得关键字之后进行处理，得到关联数据
         Service service = new Service();
@@ -60,7 +64,7 @@ public class ShowReport extends HttpServlet {
         }
 
 //        返回JSON格式
-        System.out.println(list);
+        //System.out.println(list);
 
         System.out.println(JSONArray.fromObject(list));
         response.getWriter().write(JSONArray.fromObject(list).toString());

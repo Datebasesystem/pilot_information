@@ -9,6 +9,7 @@
 package main.service;
 
 
+import main.bean.Pilots;
 import main.bean.ShowList;
 import main.javadao.JavaDao;
 
@@ -57,7 +58,8 @@ public class Service {
      * @param 参数说明 keywords 为传入的JSON 我们对其进行拆分，分为多个json，每个json分别查询
      *             将结果连成一张表
      *             true 表示显示，false 表示隐藏
-     * @return 返回值 List 即为查询的结果
+     * @return 返回值 ShowList 类 即为查询的结果
+     *          该类其实就是一个list 的合集，把list放在list中
      * @throws 对方法可能抛出的异常进行说明 SQLException
      * @name getSelectionAnswer
      * @brief 输入JSON格式的数据，为[{"start":"1922","end":"1930"},{"start":"1922","end":"1930"},{"start":"1922","end":"1930"}]
@@ -65,7 +67,7 @@ public class Service {
      */
 
     public ShowList getSelectionAnswer(String keywords) throws SQLException {
-        list = new ArrayList();
+        List<Pilots> list2 = new ArrayList<Pilots>();
         List<List> listTem= new ArrayList<List>();
         ShowList listSum = new ShowList();
 
@@ -83,22 +85,25 @@ public class Service {
             start = jsonObject.getInteger("start");
             end = jsonObject.getInteger("end");
             //将这两个数据送入JavaDao层搜索
-            list = JavaDao.searchYearOfSection(start , end);
-            listTem.add(list);
-            listSum.setList(listTem);
+            list2 = JavaDao.searchYearOfSection(start , end);
+            listTem.add(list2);
+            //listSum.setList(listem);
 
         }
-
+        listSum.setList(listTem);
+        /**
+         *
+         * 读取listSum的内容
         List t1;
         for(int i2 = 0;i2 < listSum.getList().size(); i2 ++){
-            t1 = listSum.getList().get(0);
+            t1 = listSum.getList().get(i2);
             for(Object string1 : t1){
                 System.out.println(string1);
             }
 
             //System.out.println(list.get(i));
         }
-
+*/
         return listSum;
 
     }

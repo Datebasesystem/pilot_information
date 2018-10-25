@@ -7,10 +7,8 @@
           <element id="module-output" name="pilot_information" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="D:/apache-tomcat-9.0.7-windows-x64/apache-tomcat-9.0.7/lib/mysql-connector-java-8.0.12.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/xom-1.2.8.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/json-lib-2.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/ezmorph-1.0.6.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.5.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.8.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-collections-3.2.1.jar" />
@@ -18,6 +16,10 @@
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jstl.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/standard.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.7.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="pilot_information" />
+          <element id="library" level="application_server_libraries" name="Tomcat 9.0.7" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="pilot_information/web/Web" />

@@ -21,7 +21,13 @@ public class ShowList {
         return list;
     }
 
-    public void setList(List<List> list) {
-        this.list = list;
+    public void setList(List<List> list1) {
+
+
+        for(int i=0;i<list1.size();i++){//通过循环来赋值给另一个List
+            Object object=list1.get(i);
+            list.add((List) object);
+        }
+
     }
 }
